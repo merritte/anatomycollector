@@ -13,6 +13,8 @@
 		DE1186BC1DAAF65B00714006 /* AnatomyCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE1186BA1DAAF65B00714006 /* AnatomyCollector.xcdatamodeld */; };
 		DE1186BE1DAAF65B00714006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1186BD1DAAF65B00714006 /* Assets.xcassets */; };
 		DE1186C11DAAF65B00714006 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1186BF1DAAF65B00714006 /* LaunchScreen.storyboard */; };
+		DE9B47D91DB6D833005B5690 /* 014-20160903-5D9A7108.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE9B47D81DB6D833005B5690 /* 014-20160903-5D9A7108.jpg */; };
+		DE9B47DB1DB6D93D005B5690 /* AnatomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9B47DA1DB6D93D005B5690 /* AnatomyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		DE1186BD1DAAF65B00714006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE1186C01DAAF65B00714006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE1186C21DAAF65B00714006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE9B47D81DB6D833005B5690 /* 014-20160903-5D9A7108.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "014-20160903-5D9A7108.jpg"; sourceTree = "<group>"; };
+		DE9B47DA1DB6D93D005B5690 /* AnatomyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnatomyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				DE1186B31DAAF65B00714006 /* AppDelegate.swift */,
+				DE9B47D81DB6D833005B5690 /* 014-20160903-5D9A7108.jpg */,
 				DE1186B51DAAF65B00714006 /* ViewController.swift */,
 				DE1186B71DAAF65B00714006 /* Main.storyboard */,
+				DE9B47DA1DB6D93D005B5690 /* AnatomyViewController.swift */,
 				DE1186BD1DAAF65B00714006 /* Assets.xcassets */,
 				DE1186BF1DAAF65B00714006 /* LaunchScreen.storyboard */,
 				DE1186C21DAAF65B00714006 /* Info.plist */,
@@ -130,6 +136,7 @@
 				DE1186C11DAAF65B00714006 /* LaunchScreen.storyboard in Resources */,
 				DE1186BE1DAAF65B00714006 /* Assets.xcassets in Resources */,
 				DE1186B91DAAF65B00714006 /* Main.storyboard in Resources */,
+				DE9B47D91DB6D833005B5690 /* 014-20160903-5D9A7108.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +149,7 @@
 			files = (
 				DE1186B61DAAF65B00714006 /* ViewController.swift in Sources */,
 				DE1186BC1DAAF65B00714006 /* AnatomyCollector.xcdatamodeld in Sources */,
+				DE9B47DB1DB6D93D005B5690 /* AnatomyViewController.swift in Sources */,
 				DE1186B41DAAF65B00714006 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +314,7 @@
 				DE1186C71DAAF65B00714006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

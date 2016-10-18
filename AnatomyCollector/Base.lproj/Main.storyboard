@@ -33,10 +33,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Anatomy View Controller-->
         <scene sceneID="f24-7x-Dkh">
             <objects>
-                <viewController id="WLw-gj-6um" sceneMemberID="viewController">
+                <viewController id="WLw-gj-6um" customClass="AnatomyViewController" customModule="AnatomyCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ig3-fz-Pzj"/>
                         <viewControllerLayoutGuide type="bottom" id="wYu-eJ-dDI"/>
@@ -45,18 +45,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tqm-nK-bkc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="014-20160903-5D9A7108.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tqm-nK-bkc">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="7xs-Bi-shi"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDR-3d-8tR">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter some text here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDR-3d-8tR">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXl-dq-vp4">
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="WLw-gj-6um" eventType="touchUpInside" id="gbS-hE-7id"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -75,10 +78,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="3Pd-Jv-g46">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="vYt-g0-PEO"/>
-                            <barButtonItem title="Photos" id="w2x-Iv-xfQ"/>
+                            <barButtonItem systemItem="camera" id="vYt-g0-PEO">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="WLw-gj-6um" id="Ziv-CV-c6G"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="w2x-Iv-xfQ">
+                                <connections>
+                                    <action selector="photosTapped:" destination="WLw-gj-6um" id="Hob-H4-yZZ"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="anatomyImageView" destination="tqm-nK-bkc" id="ya4-Qv-ttc"/>
+                        <outlet property="titleTextField" destination="XDR-3d-8tR" id="xcn-bf-43U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fV-oC-ixd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,4 +118,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="-543.77811094452773"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="014-20160903-5D9A7108.jpg" width="1500" height="1000"/>
+    </resources>
 </document>

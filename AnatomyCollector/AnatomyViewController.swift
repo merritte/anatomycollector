@@ -33,9 +33,29 @@ class AnatomyViewController: UIViewController, UIImagePickerControllerDelegate,U
         
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as!
+        UIImage
+        
+        anatomyImageView.image = image
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func cameraTapped(_ sender: AnyObject) {
     }
     
     @IBAction func addTapped(_ sender: AnyObject) {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let part = Part(context: context)
+        part.name = titleTextField.text
+        part.image = UIImagePNGRepresentation(anatomyImageView.image!) as NSData?
+        
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
     }
 }

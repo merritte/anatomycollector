@@ -14,14 +14,27 @@ class AnatomyViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     @IBOutlet weak var titleTextField: UITextField!
     
+    @IBOutlet weak var addUpdateButton: UIButton!
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
     var imagePicker = UIImagePickerController()
+    var part : Part? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         
         imagePicker.delegate = self
+        
+        if part  != nil {
+            anatomyImageView.image = UIImage(data: part!.image as! Data)
+            titleTextField.text = part?.name
+            
+            addUpdateButton.setTitle("Update", for: .normal)
+        }else{
+            deleteButton.isHidden = true
+        }
     }
     
     @IBAction func photosTapped(_ sender: AnyObject) {

@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="OV8-Ih-TPs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ANC-Xm-197">
                             <connections>
-                                <segue destination="WLw-gj-6um" kind="show" id="rOl-PX-1jX"/>
+                                <segue destination="WLw-gj-6um" kind="show" identifier="partSegue" id="rOl-PX-1jX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -75,6 +75,12 @@
                                     <action selector="addTapped:" destination="WLw-gj-6um" eventType="touchUpInside" id="gbS-hE-7id"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbD-ax-2LM">
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="WLw-gj-6um" eventType="touchUpInside" id="boi-gc-31w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -82,9 +88,11 @@
                             <constraint firstItem="tqm-nK-bkc" firstAttribute="centerX" secondItem="8mw-4M-Q2M" secondAttribute="centerX" id="8fz-CE-B5L"/>
                             <constraint firstAttribute="trailing" secondItem="tqm-nK-bkc" secondAttribute="trailing" id="9u1-Ba-Exa"/>
                             <constraint firstItem="tXl-dq-vp4" firstAttribute="centerX" secondItem="8mw-4M-Q2M" secondAttribute="centerX" id="GGs-UJ-cEl"/>
+                            <constraint firstItem="UbD-ax-2LM" firstAttribute="top" secondItem="tXl-dq-vp4" secondAttribute="bottom" constant="10" id="JCQ-9i-Lv9"/>
                             <constraint firstItem="tXl-dq-vp4" firstAttribute="top" secondItem="XDR-3d-8tR" secondAttribute="bottom" constant="10" id="Y4c-gI-zdX"/>
                             <constraint firstItem="tqm-nK-bkc" firstAttribute="leading" secondItem="8mw-4M-Q2M" secondAttribute="leading" id="e9Q-Ja-WqZ"/>
                             <constraint firstItem="XDR-3d-8tR" firstAttribute="centerX" secondItem="8mw-4M-Q2M" secondAttribute="centerX" id="gSi-ym-dx0"/>
+                            <constraint firstItem="UbD-ax-2LM" firstAttribute="centerX" secondItem="8mw-4M-Q2M" secondAttribute="centerX" id="jzz-e5-Qux"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XDR-3d-8tR" secondAttribute="trailing" constant="30" id="rgP-Mj-juw"/>
                             <constraint firstItem="XDR-3d-8tR" firstAttribute="top" secondItem="tqm-nK-bkc" secondAttribute="bottom" constant="20" id="t7T-sM-1vn"/>
                             <constraint firstItem="XDR-3d-8tR" firstAttribute="leading" secondItem="8mw-4M-Q2M" secondAttribute="leadingMargin" constant="30" id="vpv-xQ-feX"/>
@@ -105,7 +113,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateButton" destination="tXl-dq-vp4" id="AGG-dW-odY"/>
                         <outlet property="anatomyImageView" destination="tqm-nK-bkc" id="ya4-Qv-ttc"/>
+                        <outlet property="deleteButton" destination="UbD-ax-2LM" id="Rzd-24-Efb"/>
                         <outlet property="titleTextField" destination="XDR-3d-8tR" id="xcn-bf-43U"/>
                     </connections>
                 </viewController>

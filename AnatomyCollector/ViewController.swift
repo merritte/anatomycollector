@@ -49,7 +49,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let part = parts[indexPath.row]
+        performSegue(withIdentifier: "partSegue", sender: part)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! AnatomyViewController
+        nextVC.part = sender as? Part
+    }
     
 }
 

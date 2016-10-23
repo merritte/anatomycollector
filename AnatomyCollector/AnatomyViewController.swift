@@ -56,19 +56,44 @@ class AnatomyViewController: UIViewController, UIImagePickerControllerDelegate,U
     }
     
     @IBAction func cameraTapped(_ sender: AnyObject) {
+        
+        imagePicker.sourceType = .camera
+        
+        present(imagePicker, animated: true, completion: nil)
+        
     }
     
     @IBAction func addTapped(_ sender: AnyObject) {
+        if part  != nil {
+            part!.name = titleTextField.text
+            part!.image = UIImagePNGRepresentation(anatomyImageView.image!) as NSData?
+        } else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let part = Part(context: context)
+            part.name = titleTextField.text
+            part.image = UIImagePNGRepresentation(anatomyImageView.image!) as NSData?
+            
+        }
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let part = Part(context: context)
-        part.name = titleTextField.text
-        part.image = UIImagePNGRepresentation(anatomyImageView.image!) as NSData?
+        
         
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         navigationController!.popViewController(animated: true)
     }
+    
+    @IBAction func deleteTapped(_ sender: AnyObject) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        context.delete(part!)
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
+        
+    }
+    
 }
